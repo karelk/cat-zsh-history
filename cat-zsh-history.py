@@ -4,9 +4,10 @@ import os, sys, datetime
 
 for f in sys.argv[1:]:
     try:
-        with open(f, 'r') as f:
+        with open(f, 'r', errors="replace") as f:
 
             content = '\n' + f.read().rstrip('\n')
+
             lines = content.split('\n: ')
 
             # skip first (empty) line
